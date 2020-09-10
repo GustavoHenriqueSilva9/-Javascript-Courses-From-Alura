@@ -14,3 +14,6 @@ const sobrenome = "Bugan";
 // O tipo de variavel let nos possibilita modificar o conteudo da variavel, já a const não, á const será o mesmo valor para todo o código por ser uma constante 
     let numero = 2;
     numero = numero +3
+
+
+    let
