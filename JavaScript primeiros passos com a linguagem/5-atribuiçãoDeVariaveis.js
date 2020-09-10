@@ -15,5 +15,9 @@ const sobrenome = "Bugan";
     let numero = 2;
     numero = numero +3
 
+const nomeCompleto = nome + sobrenome;
+console.log(nomeCompleto)
 
-    let
+// Podemos também declarar a varivel em uma linha e atribuindo em outra
+let ano; // Declarando Variavel
+ano = 2020 // Atribuição
