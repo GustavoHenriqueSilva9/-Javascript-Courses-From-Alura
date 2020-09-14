@@ -2,6 +2,7 @@ import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente { 
     
+    static numeroDeContas = 0; // é um tipo de variavel que sera valido para toda a classe, não será unico para cada instancia
     agencia;
     _cliente;
     _saldo = 0; // # é o tipo da variavel que está privada
@@ -11,9 +12,11 @@ export class ContaCorrente {
             this._cliente = novoValor;
         }
     }
+
     get cliente(){ // Acessores  get para exibir/mostrar
         return this._cliente
     }
+
     get saldo(){ // Acessores  
         return this._saldo
     }
@@ -38,4 +41,9 @@ export class ContaCorrente {
         conta.depositar(valorSacado);
     }
 
+    constructor(cliente, agencia){
+        this.agencia = agencia;
+        this.cliente = cliente
+        ContaCorrente.numeroDeContas += 1
+    }
 }
