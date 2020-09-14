@@ -1,4 +1,4 @@
 export class Cliente { //classe = Molde
-    nome;//atributos
-    cpf;
+    nome; //atributo
+    cpf; //atributo
 }
