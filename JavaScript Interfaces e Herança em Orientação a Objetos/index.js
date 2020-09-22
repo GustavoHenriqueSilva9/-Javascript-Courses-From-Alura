@@ -1,15 +1,26 @@
 console.log("Execução")
 import { Cliente } from "./Cliente.js";
-import { Conta } from "./Conta.js";
-import { ContaCorrente } from "./ContaCorrente.js";
-import { ContaPoupanca } from "./ContaPoupanca.js";
-import { ContaSalario } from "./ContaSalario.js";
+import{ Gerente } from "./Funcionarios/Gerente.js"
+import{ Diretor } from "./Funcionarios/Diretor.js"
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
+
+const diretor = new Diretor("Rodrigo", 10000,45455121)
+diretor.CadastrarSenha("123456789")
+
+const gerente = new Gerente("Gustavo", 5000, 16549848)
+gerente.CadastrarSenha("123")
+const cliente = new Cliente("Lais", 78448464 , "123456")
 
 
-const cliente1 = new Cliente("Ricardo",11122233309);
+const gerenteLogado = SistemaAutenticacao.login(gerente, "123")
+const diretorLogado = SistemaAutenticacao.login(diretor, "123456789")
+// const clienteLogado = SistemaAutenticacao.login(cliente, "123456")
 
-const conta1 = new ContaSalario(cliente1, 1001);
-conta1.depositar(500)
-conta1.sacar(100); 
 
-console.log(conta1)
+
+
+
+console.log(gerenteLogado)
+console.log(diretorLogado)
+// console.log(clienteLogado)
+
