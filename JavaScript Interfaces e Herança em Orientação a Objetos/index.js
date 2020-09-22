@@ -14,7 +14,7 @@ const cliente = new Cliente("Lais", 78448464 , "123456")
 
 const gerenteLogado = SistemaAutenticacao.login(gerente, "123")
 const diretorLogado = SistemaAutenticacao.login(diretor, "123456789")
-// const clienteLogado = SistemaAutenticacao.login(cliente, "123456")
+const clienteLogado = SistemaAutenticacao.login(cliente, "123456")
 
 
 
@@ -22,5 +22,5 @@ const diretorLogado = SistemaAutenticacao.login(diretor, "123456789")
 
 console.log(gerenteLogado)
 console.log(diretorLogado)
-// console.log(clienteLogado)
+console.log(clienteLogado)
 
