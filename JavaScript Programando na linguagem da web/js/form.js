@@ -43,6 +43,15 @@ function criaTr(paciente){
     pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
     pacienteTr.appendChild(montaTd(paciente.imc, "imc-nome"));
 
+    var erro = validaPaciente(paciente);
+
+    if(erro.length > 0){
+        console.log("Paciente Invalido!")
+        document.querySelector("#error").textContent = validaPaciente(paciente);
+        return;
+    }
+
+
 
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);
@@ -54,6 +63,18 @@ function montaTd(dado, classe){
     td.classList.add(classe);
 
     return td
+}
+
+function validaPaciente(paciente){
+    
+    var erros = []
+
+    if(!validaPeso(paciente.peso)) erros.push("Peso Invalido");
+    if(!validaAltura(paciente.altura)) erros.push("Altura Invalida");
+    
+    console.log(erros)
+    return erros;
+
 }
 
 
