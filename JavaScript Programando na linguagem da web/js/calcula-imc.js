@@ -1,4 +1,4 @@
-document.querySelector(".titulo"); // document seleciona todo o documento html e o query selector se especifica em um seletor em quetão.
+document.querySelector(".titulo"); // document seleciona todo o documento html e o query selector se especifica em um seletor em questão.
 
 var titulo = document.querySelector(".titulo");
 console.log(titulo); // exibi todo o h1 juntamente com sua tag
@@ -10,7 +10,7 @@ titulo.textContent = "Alteração do Texto"; // para alterar todo o conteúdo do
 
 var pacientes = document.querySelectorAll(".paciente"); //Sleciona todos os seletores, não apenas o primeiro
 
-for (var i = 0; i < pacientes.length; i++) {
+for (var i = 0; i < pacientes.length; i++) {   
   var paciente = pacientes[i];
   var altura = paciente.querySelector(".info-altura").textContent;
   var peso = paciente.querySelector(".info-peso").textContent;
@@ -39,7 +39,7 @@ function validaPeso(peso) {
   if (peso >= 0 && peso <= 1000) {
     return true;
   }
-  else{
+  else {
     return false;
   }
 }
