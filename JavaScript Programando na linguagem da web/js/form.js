@@ -11,13 +11,14 @@ botaoAdicionar.addEventListener("click", function (event) {
     //Extraindo informações do paciente do Form
     var paciente = obtemPacienteDoFormulario(form);
 
-    //Cria a tr e a td do paciente
-    var pacienteTr = criaTr(paciente);
+    adicionaPaciente(paciente)
 
     form.reset(); // Tira os escritos dos inputs
 
 
-})
+});
+
+
 
 
 function obtemPacienteDoFormulario(form) {
@@ -43,9 +44,9 @@ function criaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
     pacienteTr.appendChild(montaTd(paciente.imc, "imc-nome"));
 
-    var tabela = document.querySelector("#tabela-pacientes");
     
     var erro = validaPaciente(paciente);
+    
     
     if (erro.length == 0) {
         tabela.appendChild(pacienteTr);
@@ -54,6 +55,19 @@ function criaTr(paciente) {
     if (erro.length > 0) {
         exibeMensagensDeErro(erro)
     };
+
+    return pacienteTr
+    
+
+}
+
+function adicionaPaciente(paciente){
+    //Cria a tr e a td do paciente
+    var pacienteTr = criaTr(paciente);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteTr);
 
 
 }
